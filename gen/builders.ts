@@ -3557,10 +3557,10 @@ export interface TSParameterPropertyBuilder {
 }
 
 export interface MacroBodyBuilder {
-  (tokens: string[]): namedTypes.MacroBody;
+  (tokens: object[]): namedTypes.MacroBody;
   from(
     params: {
-      tokens: string[]
+      tokens: object[]
     }
   ): namedTypes.MacroBody;
 }

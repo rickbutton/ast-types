@@ -1615,7 +1615,7 @@ export namespace namedTypes {
 
   export interface MacroBody {
     type: "MacroBody";
-    tokens: string[];
+    tokens: object[];
   }
 
   export interface MacroMatch {
