@@ -12,6 +12,7 @@ import esprimaDef from "./def/esprima";
 import babelDef from "./def/babel";
 import typescriptDef from "./def/typescript";
 import esProposalsDef from "./def/es-proposals";
+import macrojsDef from "./def/macrojs";
 import { ASTNode, Type, AnyType, Field } from "./lib/types";
 import { NodePath } from "./lib/node-path";
 import { namedTypes } from "./gen/namedTypes";
@@ -56,6 +57,7 @@ const {
   babelDef,
   typescriptDef,
   esProposalsDef,
+  macrojsDef,
 ]);
 
 // Populate the exported fields of the namedTypes namespace, while still

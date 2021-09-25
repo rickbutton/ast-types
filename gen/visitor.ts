@@ -290,4 +290,8 @@ export interface Visitor<M = {}> {
   visitTSInterfaceBody?(this: Context & M, path: NodePath<namedTypes.TSInterfaceBody>): any;
   visitTSInterfaceDeclaration?(this: Context & M, path: NodePath<namedTypes.TSInterfaceDeclaration>): any;
   visitTSParameterProperty?(this: Context & M, path: NodePath<namedTypes.TSParameterProperty>): any;
+  visitMacroBody?(this: Context & M, path: NodePath<namedTypes.MacroBody>): any;
+  visitMacroMatch?(this: Context & M, path: NodePath<namedTypes.MacroMatch>): any;
+  visitMacroPattern?(this: Context & M, path: NodePath<namedTypes.MacroPattern>): any;
+  visitMacroStatement?(this: Context & M, path: NodePath<namedTypes.MacroStatement>): any;
 }

@@ -3556,6 +3556,46 @@ export interface TSParameterPropertyBuilder {
   ): namedTypes.TSParameterProperty;
 }
 
+export interface MacroBodyBuilder {
+  (tokens: string[]): namedTypes.MacroBody;
+  from(
+    params: {
+      tokens: string[]
+    }
+  ): namedTypes.MacroBody;
+}
+
+export interface MacroMatchBuilder {
+  (name: K.IdentifierKind, kind: K.IdentifierKind): namedTypes.MacroMatch;
+  from(
+    params: {
+      kind: K.IdentifierKind,
+      name: K.IdentifierKind
+    }
+  ): namedTypes.MacroMatch;
+}
+
+export interface MacroPatternBuilder {
+  (matches: K.MacroMatchKind[]): namedTypes.MacroPattern;
+  from(
+    params: {
+      matches: K.MacroMatchKind[]
+    }
+  ): namedTypes.MacroPattern;
+}
+
+export interface MacroStatementBuilder {
+  (id: K.IdentifierKind, patterns: K.MacroPatternKind[]): namedTypes.MacroStatement;
+  from(
+    params: {
+      comments?: K.CommentKind[] | null,
+      id: K.IdentifierKind,
+      loc?: K.SourceLocationKind | null,
+      patterns: K.MacroPatternKind[]
+    }
+  ): namedTypes.MacroStatement;
+}
+
 export interface builders {
   file: FileBuilder;
   program: ProgramBuilder;
@@ -3814,5 +3854,9 @@ export interface builders {
   tsInterfaceBody: TSInterfaceBodyBuilder;
   tsInterfaceDeclaration: TSInterfaceDeclarationBuilder;
   tsParameterProperty: TSParameterPropertyBuilder;
+  macroBody: MacroBodyBuilder;
+  macroMatch: MacroMatchBuilder;
+  macroPattern: MacroPatternBuilder;
+  macroStatement: MacroStatementBuilder;
   [builderName: string]: any;
 }
